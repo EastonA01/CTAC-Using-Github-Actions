@@ -10,10 +10,9 @@ The CI pipeline is triggered on every push to the main branch. It performs the f
 5. **Archive artifacts**: Stores build artifacts (optional).
 
 ## Continuous Deployment (CD)
-After a successful build and testing, the CD pipeline deploys the application to Heroku. It:
-1. Installs the Heroku CLI.
-2. Deploys the code to Heroku using the Heroku API key.
-3. The deployment is automatic once tests pass.
+After a successful build and testing, the CD pipeline deploys the application to Github Pages. It:
+1. Deploys the code to Github Pages using the gh-pages API key.
+2. The deployment is automatic once tests pass.
 
 ## Secrets Configuration
-- `HEROKU_API_KEY`: Used to authenticate deployment to Heroku.
+- Secret's configuration shouldn't be a problem as your respective gh-pages API key should be tied to your the account default and should not need to be manually set
