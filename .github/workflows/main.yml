@@ -58,3 +58,23 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+  # This would in theory run deployment with Heroku
+  deployment:
+    runs-on: ubuntu-latest
+    needs: build # Ensure the build step succeeds before deployment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install.sh | sh
+  
+      - name: Deploy to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: your-heroku-app-name
+        run: |
+          git remote add heroku https://git.heroku.com/${{ env.HEROKU_APP_NAME }}.git
+          git push heroku main
