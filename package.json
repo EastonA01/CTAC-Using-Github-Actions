@@ -1,9 +1,9 @@
 {
-  "name": "ci-cd-github-actions",
+  "name": "ci-cd-github-pages",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "echo \"Build process\""
+    "build": "echo 'Build the project!'",
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {}
 }
